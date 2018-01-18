@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": { "browsers": ["last 2 versions"] }
+      }
+    ],
+    "stage-0",
+    "react"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    },
+    "prod": {
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  },
+  "compact": false,
+  "plugins": [
+    "transform-regenerator",
+    [
+      "transform-imports",
+      {
+        "local": {
+          "transform": "./_${member}"
+        },
+        "local.svg": {
+          "transform": "./_${member}.svg"
+        },
+        "local.png": {
+          "transform": "./_${member}.png"
+        },
+        "local.jpg": {
+          "transform": "./_${member}.jpg"
+        }
+      }
+    ]
+  ]
+}
