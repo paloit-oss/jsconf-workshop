@@ -23,11 +23,12 @@ Typography.H4 = Typography.extend`
 `
 
 Typography.H5 = Typography.extend`
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: bold;
 `
 
 Typography.P = Typography.extend`
-  font-size: 12px;
+  font-size: 13px;
 `
 
 export default Typography

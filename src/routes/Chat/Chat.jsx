@@ -5,9 +5,9 @@ import { List } from 'immutable'
 
 // INTERNAL DEPENDENCIES
 import { editInput } from 'actions'
-import { Flex, Container, Input, Typography, ChatBubble, Form, Space } from 'components'
+import { Flex, Container, Input, Typography, Form, Space } from 'components'
 
-import { Header, Chats, MessageInput } from 'local'
+import { Header, ChatContainer, MessageInput } from 'local'
 
 const { H1 } = Typography
 const CHAT_INPUT = 'chat'
@@ -15,6 +15,7 @@ const CHAT_INPUT = 'chat'
 const Chat = props => {
   const currentInputMsg = props.state.getIn(['inputs', CHAT_INPUT, 'value'], '')
   const chats = props.state.getIn(['chats'], List())
+  const username = props.state.get('username')
   const { dispatch } = props
   return (
     <Flex justifyContent={'center'} height={'100%'}>
@@ -26,10 +27,9 @@ const Chat = props => {
           height={'100%'}
         >
           <Header />
-          <Space height={'30px'} />
-          <Chats chats={chats} />
-          <Space height={'30px'} />
-          <MessageInput currentInputMsg={currentInputMsg} dispatch={dispatch} />
+          <ChatContainer chats={chats} />
+          <Space height={'20px'} />
+          <MessageInput currentInputMsg={currentInputMsg} username={username} dispatch={dispatch} />
           <Space height={'50px'} />
         </Flex>
       </Container>

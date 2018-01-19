@@ -7,3 +7,4 @@ export const addUserToChat = createAction('USER_ADD', arg => arg, arg => ({ sock
 export const saveUsername = createAction('USERNAME_SAVE')
 export const showInputError = createAction('INPUT_ERROR')
 export const addChatMsg = createAction('CHAT_MSG_ADD')
+export const addGenericMsg = createAction('GENERIC_MSG_ADD')

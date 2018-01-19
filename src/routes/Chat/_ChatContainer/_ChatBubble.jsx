@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { Flex, Typography } from 'components'
 
-const { P } = Typography
+const { P, H5 } = Typography
 
 const Wrapper = styled.div`
   max-width: 80%;
@@ -28,9 +28,10 @@ const Wrapper = styled.div`
 `
 
 const ChatBubble = props => {
-  const { right, left, content } = props
+  const { right, left, content, username, isSelf } = props
   return (
     <Wrapper right={right} left={left}>
+      {!isSelf && <H5>{username}</H5>}
       <P>{content}</P>
     </Wrapper>
   )

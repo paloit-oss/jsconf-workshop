@@ -12,7 +12,7 @@ const { H1 } = Typography
 const USERNAME = 'username'
 
 const Login = props => {
-  const { history, dispatch } = props
+  const { dispatch } = props
   const userName = props.state.getIn(['inputs', USERNAME, 'value'], '')
   const userNameError = props.state.getIn(['inputs', USERNAME, 'error'], '')
   return (
