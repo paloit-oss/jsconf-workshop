@@ -13,7 +13,7 @@ const { H1 } = Typography
 const CHAT_INPUT = 'chat'
 
 const Chat = props => {
-  const currentInputMsg = props.state.getIn(['inputs', CHAT_INPUT], '')
+  const currentInputMsg = props.state.getIn(['inputs', CHAT_INPUT, 'value'], '')
   const chats = props.state.getIn(['chats'], List())
   const { dispatch } = props
   return (

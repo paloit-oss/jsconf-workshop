@@ -5,15 +5,16 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
 // INTERNAL DEPENDENCIES
-import { editInput } from 'actions'
+import { editInput, addUserToChat } from 'actions'
 import { Flex, Container, Input, Typography, Space, Form } from 'components'
 
 const { H1 } = Typography
 const USERNAME = 'username'
 
 const Login = props => {
-  const { history } = props
-  const userName = props.state.getIn(['inputs', USERNAME], '')
+  const { history, dispatch } = props
+  const userName = props.state.getIn(['inputs', USERNAME, 'value'], '')
+  const userNameError = props.state.getIn(['inputs', USERNAME, 'error'], '')
   return (
     <Container>
       <Flex
@@ -24,13 +25,17 @@ const Login = props => {
       >
         <H1>This is login</H1>
         <Space height={'55px'} />
-        <Form onSubmit={e => e.preventDefault() || history.push('/chat')}>
+        <Form
+          onSubmit={e => e.preventDefault() || dispatch(addUserToChat({ userName }))}
+          autoComplete="off"
+        >
           <Input
             type={'text'}
             name={USERNAME}
             value={userName}
+            error={userNameError}
             placeholder={'Username'}
-            onChange={value => props.dispatch(editInput({ value, name: USERNAME }))}
+            onChange={value => dispatch(editInput({ value, name: USERNAME }))}
           />
         </Form>
       </Flex>

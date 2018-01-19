@@ -15,8 +15,20 @@ const Chats = props => {
   const { chats } = props
   return (
     <Wrapper>
-      <Flex justifyContent={'flex-end'} alignContent={'center'} flexDirection={'column'}>
-        {chats.map((chat, i) => <ChatBubble key={i} right content={chat} />)}
+      <Flex
+        justifyContent={'flex-end'}
+        alignContent={'center'}
+        flexDirection={'column'}
+        height={'100%'}
+      >
+        {chats.map((chat, i) => (
+          <ChatBubble
+            key={i}
+            right={chat.get('isSelf')}
+            left={!chat.get('isSelf')}
+            content={chat.get('message')}
+          />
+        ))}
       </Flex>
     </Wrapper>
   )
