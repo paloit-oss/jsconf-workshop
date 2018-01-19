@@ -16,7 +16,12 @@ const Login = props => {
   const userName = props.state.getIn(['inputs', USERNAME], '')
   return (
     <Container>
-      <Flex justifyContent={'center'} alignContent={'center'} flexDirection={'column'}>
+      <Flex
+        justifyContent={'center'}
+        alignContent={'center'}
+        flexDirection={'column'}
+        height={'100%'}
+      >
         <H1>This is login</H1>
         <Space height={'55px'} />
         <Form onSubmit={e => e.preventDefault() || history.push('/chat')}>

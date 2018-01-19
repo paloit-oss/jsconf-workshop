@@ -26,4 +26,8 @@ Typography.H5 = Typography.extend`
   font-size: 14px;
 `
 
+Typography.P = Typography.extend`
+  font-size: 12px;
+`
+
 export default Typography
