@@ -7,7 +7,6 @@
         "targets": { "browsers": ["last 2 versions"] }
       }
     ],
-    "stage-0",
     "react"
   ],
   "env": {
@@ -20,10 +19,17 @@
   },
   "compact": false,
   "plugins": [
+    "babel-plugin-styled-components",
     "transform-regenerator",
     [
       "transform-imports",
       {
+        "routes": {
+          "transform": "routes/${member}/${member}"
+        },
+        "components": {
+          "transform": "components/${member}/${member}"
+        },
         "local": {
           "transform": "./_${member}"
         },

@@ -1,6 +1,8 @@
-// import 'babel-polyfill'
+// EXTERNAL DEPENDENCIES
 import React from 'react'
 import { render } from 'react-dom'
+
+// INTERNAL DEPENDENCIES
 import App from 'App'
 
 if (process.env.NODE_ENV !== 'production') {

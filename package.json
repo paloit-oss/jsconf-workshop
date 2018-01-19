@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server --hot --watch --config ./.webpack/development.js",
-    "build": "webpack --env=production --config ./.webpack/production.js"
+    "build": "webpack --env=production --config ./.webpack/production.js",
+    "test:watch": "jest --watch",
+    "cov": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,7 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
-    "react-router-redux": "^4.0.8",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-act": "^1.5.1",
     "styled-components": "^2.4.0"
@@ -27,6 +29,7 @@
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-styled-components": "^1.4.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-imports": "^1.4.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.12",

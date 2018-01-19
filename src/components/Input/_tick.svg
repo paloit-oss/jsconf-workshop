@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="D01---step-3---01" transform="translate(-696.000000, -179.000000)" stroke="#38E680" fill="#38E680">
+            <g id="text-field---3/4---validated" transform="translate(409.000000, 146.000000)">
+                <path d="M291.343109,43.8240469 L288.234605,40.7155429 C287.921798,40.4418367 287.921798,40.1485846 288.234605,39.8357776 C288.547412,39.5229705 288.840664,39.5229705 289.114371,39.8357776 L291.812318,42.5337245 L300.727273,34.2052796 C301.04008,33.9315735 301.333332,33.9315735 301.607038,34.2052796 C301.919845,34.4789857 301.919845,34.7722379 301.607038,35.0850449 L292.222875,43.8240469 C292.105572,43.9413496 291.968721,44 291.812318,44 C291.616813,44 291.460412,43.9413496 291.343109,43.8240469 Z" id="Tick"></path>
+            </g>
+        </g>
+    </g>
+</svg>
