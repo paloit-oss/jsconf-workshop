@@ -5,14 +5,13 @@ import io from 'socket.io-client'
 
 // INTERNAL DEPENDENCIES
 import stateReducer from 'reducer'
-import socketEmitMiddleware from './middlewares/socketEmit'
-import setUpSocketListener from 'socket'
+import socketMiddleware from './middlewares/socket'
+import setUpSocket from 'socketConfig'
 
 // const socket = io('https://murmuring-taiga-86309.herokuapp.com')
 const socket = io('localhost:5000')
 
-const middlewares = applyMiddleware(socketEmitMiddleware(socket))
+const middlewares = applyMiddleware(socketMiddleware(setUpSocket(socket)))
 const store = createStore(stateReducer, composeWithDevTools(middlewares))
-setUpSocketListener(socket, store.dispatch)
 
 export default store
