@@ -11,7 +11,8 @@ const postData = ({ value: message, username }) => ({
 const restMiddleware = ({ dispatch }) => next => action => {
   const restConfig = {
     [sendChatMsg]: () =>
-      fetch('http://localhost:5000/message', postData(action.payload))
+      // fetch('http://localhost:5000/message', postData(action.payload))
+      fetch('https://murmuring-taiga-86309.herokuapp.com/message', postData(action.payload))
         .then(res => res.json())
         .then(res => res.status === 'Error' && dispatch(showSendMsgError({ message: res.message })))
         .catch(err => console.log(err))
