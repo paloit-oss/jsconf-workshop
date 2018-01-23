@@ -43,30 +43,5 @@ class Chats extends Component {
     )
   }
 }
-// const Chats = props => {
-//   const { chats } = props
-//   return (
-//     <Wrapper>
-//       <FlexWrapper justifyContent={'flex-end'} alignItems={'center'} flexDirection={'column'}>
-//         {chats.map(
-//           (chat, i) =>
-//             chat.get('type') === 'chat' ? (
-//               <ChatBubble
-//                 key={i}
-//                 right={chat.get('isSelf')}
-//                 left={!chat.get('isSelf')}
-//                 content={chat.get('message')}
-//                 username={chat.get('username')}
-//                 isSelf={chat.get('isSelf')}
-//                 showResendButton={chat.get('showResendButton')}
-//               />
-//             ) : (
-//               <GenericMsg key={i} content={chat.get('message')} />
-//             )
-//         )}
-//       </FlexWrapper>
-//     </Wrapper>
-//   )
-// }
 
 export default Chats
