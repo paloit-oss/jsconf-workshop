@@ -15,13 +15,15 @@ const setUpSocket = socket => {
     socket.on('loginFailed', data =>
       dispatch(showInputError({ name: 'username', error: 'is already taken' }))
     )
-    socket.on('newMessage', ({ message, username }) => {
+    socket.on('newMessage', ({ message, username ,emitType}) => {
       const state = getState()
       const currentUsername = state.get('username')
-      return (
+      if(currentUsername === username && emitType=='score'){
+         dispatch(addChatMsg({ value: message, username, isSelf: true }))
+      }else{
         currentUsername !== username &&
-        dispatch(addChatMsg({ value: message, username, isSelf: false }))
-      )
+          dispatch(addChatMsg({ value: message, username, isSelf: false }))
+      }
     })
     socket.on('userJoined', data =>
       dispatch(addGenericMsg({ value: `${data.username} has joined the chat` }))
