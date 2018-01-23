@@ -6,6 +6,6 @@ import io from 'socket.io-client'
 // INTERNAL DEPENDENCIES
 import stateReducer from 'reducer'
 
-const store = createStore(stateReducer, composeWithDevTools(middlewares))
+const store = createStore(stateReducer, composeWithDevTools())
 
 export default store

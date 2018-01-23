@@ -17,10 +17,3 @@ export const addNewMsg = ({ value, isSelf, username }) => state => {
 export const clearInput = ({ name }) => state => state.setIn(['inputs', name, 'value'], '')
 
 export const setInput = ({ name, value }) => state => state.setIn(['inputs', name, 'value'], value)
-
-export const saveUsername = () => state => {
-  const username = state.getIn(['inputs', 'username', 'value'])
-  return state.set('username', username)
-}
-
-export const clearInputError = ({ name }) => state => state.setIn(['inputs', name, 'error'], '')

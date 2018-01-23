@@ -7,7 +7,6 @@ import { List } from 'immutable'
 import { editInput, sendChatMsg } from 'actions'
 import { Flex, Container, Input, Typography, Form, Space } from 'components'
 import { Header, ChatContainer, MessageInput } from 'local'
-import RouteProtect from 'hoc/RouteProtect'
 
 const { H1 } = Typography
 const CHAT_INPUT = 'chat'
@@ -25,6 +24,7 @@ class Chat extends Component {
     const currentInputMsg = state.getIn(['inputs', CHAT_INPUT, 'value'], '')
     const chats = state.getIn(['chats'], List())
     const username = state.get('username')
+
     return (
       <Flex justifyContent={'center'} height={'100%'}>
         <Container maxWidth={'600px'}>
@@ -59,4 +59,4 @@ const s = state => ({ state })
 // d function
 const d = dispatch => ({ dispatch })
 
-export default connect(s, d)(RouteProtect(Chat))
+export default connect(s, d)(Chat)

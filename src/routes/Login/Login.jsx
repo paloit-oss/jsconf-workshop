@@ -12,7 +12,7 @@ const { H1 } = Typography
 const USERNAME = 'username'
 
 const Login = props => {
-  const { dispatch } = props
+  const { dispatch, history } = props
   const userName = props.state.getIn(['inputs', USERNAME, 'value'], '')
   const userNameError = props.state.getIn(['inputs', USERNAME, 'error'], '')
   return (
@@ -25,10 +25,7 @@ const Login = props => {
       >
         <H1>This is login</H1>
         <Space height={'55px'} />
-        <Form
-          onSubmit={e => e.preventDefault() || dispatch(addUserToChat({ userName }))}
-          autoComplete="off"
-        >
+        <Form onSubmit={e => e.preventDefault() || history.push('/chat')} autoComplete="off">
           <Input
             type={'text'}
             name={USERNAME}
