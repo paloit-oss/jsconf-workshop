@@ -5,7 +5,8 @@ import { List } from 'immutable'
 
 // INTERNAL DEPENDENCIES
 import { editInput } from 'actions'
-import { Flex, Container, Input, Typography, Form, Space } from 'components'
+import { Flex, Container, Input, Typography, Form, Space, Button } from 'components'
+import { history } from '../../App'
 
 import { Header, ChatContainer, MessageInput } from 'local'
 
@@ -27,6 +28,7 @@ const Chat = props => {
           height={'100%'}
         >
           <Header />
+          <Button onClick={(e)=>history.push('/quiz')}>Quiz</Button>
           <ChatContainer chats={chats} />
           <Space height={'20px'} />
           <MessageInput currentInputMsg={currentInputMsg} username={username} dispatch={dispatch} />

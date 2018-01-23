@@ -16,7 +16,7 @@ Typography.H2 = Typography.extend`
 
 Typography.H3 = Typography.extend`
   font-size: 28px;
-  margin: auto;
+  text-align: center;
 `
 
 Typography.H4 = Typography.extend`

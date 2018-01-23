@@ -5,10 +5,11 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { List } from 'immutable'
 import axios from 'axios'
+import { history } from '../../App'
 
 // INTERNAL DEPENDENCIES
 import { quizQns, quizSubmit } from 'actions'
-import { Flex, Wrapper, Typography, Space, Form } from 'components'
+import { Flex, Wrapper, Typography, Space, Form, Button } from 'components'
 import { Header, Question, Validate } from 'local'
 
 const { H5 } = Typography
@@ -21,6 +22,13 @@ class Quiz extends Component {
       .then(res => {
         this.props.dispatch(quizQns({
           questions: res.data
+        }))
+      })
+      .catch(error => {
+        this.props.dispatch(quizSubmit({
+          quizStatus: error.data.status,
+          quizStatusMsg: error.data.msg,
+          quizScore: error.data.score
         }))
       });
   }
@@ -40,6 +48,13 @@ class Quiz extends Component {
         quizStatus: res.data.status,
         quizStatusMsg: res.data.msg,
         quizScore: res.data.score
+      }))
+    })
+    .catch(error => {
+      this.props.dispatch(quizSubmit({
+        quizStatus: error.data.status,
+        quizStatusMsg: error.data.msg,
+        quizScore: error.data.score
       }))
     });
   }
@@ -69,7 +84,9 @@ class Quiz extends Component {
               )
             }
             {
-              (quizStatus == 'success') ? null : (
+              (quizStatus == 'success') ? (
+                <Button onClick={(e)=>history.push('/chat')}>Back to Chat Page</Button>
+              ) : (
                 <Validate error={quizStatusMsg} />
                 )
             }
