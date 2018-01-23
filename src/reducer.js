@@ -5,17 +5,7 @@ import { Map } from 'immutable'
 // INTERNAL DEPENDENCIES
 import * as actions from 'actions'
 import { pipe } from 'utils'
-import {
-  addNewMsg,
-  clearInput,
-  setInput,
-  saveUsername,
-  showInputError,
-  clearInputError,
-  addNewGenericMsg,
-  showMsgError,
-  appendOlderMsgs
-} from 'mutators'
+import { addNewMsg, clearInput, setInput, saveUsername, clearInputError } from 'mutators'
 
 const defaultState = Map({})
 
@@ -27,12 +17,7 @@ const stateReducer = createReducer(
       pipe(
         [saveUsername(), clearInput({ name: 'username' }), clearInputError({ name: 'username' })],
         state
-      ),
-    [actions.showInputError]: (state, action) => pipe([showInputError(action)], state),
-    [actions.addChatMsg]: (state, action) => pipe([addNewMsg(action)], state),
-    [actions.addGenericMsg]: (state, action) => pipe([addNewGenericMsg(action)], state),
-    [actions.showSendMsgError]: (state, action) => pipe([showMsgError(action)], state),
-    [actions.appendOlderMsgs]: (state, action) => pipe([appendOlderMsgs(action)], state)
+      )
   },
   defaultState
 )
