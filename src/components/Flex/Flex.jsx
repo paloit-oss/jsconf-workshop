@@ -5,7 +5,7 @@ const Flex = styled.div`
   width: 100%;
   height: ${({ height }) => height || `auto`};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
-  align-items: ${({ alignContent }) => alignContent || 'flex-start'};
+  align-items: ${({ alignItems }) => alignItems || 'flex-start'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
 `
 

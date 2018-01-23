@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   border-radius: 10px;
   padding: 10px;
   margin: 2px 10px;
+  transition: background-color 0.5s ease-out;
   ${({ right }) =>
     right &&
     `
@@ -25,14 +26,25 @@ const Wrapper = styled.div`
     color: black;
     background-color: #F0F0EC;
   `};
+  ${({ error }) =>
+    error &&
+    `
+    background-color: #FC4F60 !important;
+  `};
+`
+
+const Resend = P.extend`
+  font-size: 10px;
+  text-decoration: underline;
 `
 
 const ChatBubble = props => {
-  const { right, left, content, username, isSelf } = props
+  const { right, left, content, username, isSelf, showResendButton } = props
   return (
-    <Wrapper right={right} left={left}>
+    <Wrapper right={right} left={left} error={showResendButton}>
       {!isSelf && <H5>{username}</H5>}
       <P>{content}</P>
+      <Flex justifyContent={'flex-end'}>{showResendButton && <Resend>Resend</Resend>}</Flex>
     </Wrapper>
   )
 }
