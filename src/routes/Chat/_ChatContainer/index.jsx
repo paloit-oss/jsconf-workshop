@@ -31,6 +31,7 @@ const Chats = props => {
                 content={chat.get('message')}
                 username={chat.get('username')}
                 isSelf={chat.get('isSelf')}
+                showResendButton={chat.get('showResendButton')}
               />
             ) : (
               <GenericMsg key={i} content={chat.get('message')} />

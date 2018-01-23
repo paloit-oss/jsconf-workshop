@@ -6,8 +6,8 @@ import { List } from 'immutable'
 // INTERNAL DEPENDENCIES
 import { editInput } from 'actions'
 import { Flex, Container, Input, Typography, Form, Space } from 'components'
-
 import { Header, ChatContainer, MessageInput } from 'local'
+import RouteProtect from 'hoc/RouteProtect'
 
 const { H1 } = Typography
 const CHAT_INPUT = 'chat'
@@ -43,4 +43,4 @@ const s = state => ({ state })
 // d function
 const d = dispatch => ({ dispatch })
 
-export default connect(s, d)(Chat)
+export default connect(s, d)(RouteProtect(Chat))

@@ -7,9 +7,18 @@ export const addNewMsg = ({ value, isSelf, username }) => state => {
     message: value,
     username,
     isSelf,
-    type: 'chat'
+    type: 'chat',
+    showResendButton: false
   })
   const updatedChat = currentChat.push(msgObj)
+  return state.set('chats', updatedChat)
+}
+
+export const showMsgError = action => state => {
+  const chats = state.get('chats')
+  const updatedChat = chats.map(
+    chat => (chat.get('message') === action.message ? chat.set('showResendButton', true) : chat)
+  )
   return state.set('chats', updatedChat)
 }
 
