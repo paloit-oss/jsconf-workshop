@@ -12,7 +12,9 @@ import {
   saveUsername,
   showInputError,
   clearInputError,
-  addNewGenericMsg
+  addNewGenericMsg,
+  quizQns,
+  quizSubmit
 } from 'mutators'
 
 const defaultState = Map({})
@@ -28,7 +30,9 @@ const stateReducer = createReducer(
       ),
     [actions.showInputError]: (state, action) => pipe([showInputError(action)], state),
     [actions.addChatMsg]: (state, action) => pipe([addNewMsg(action)], state),
-    [actions.addGenericMsg]: (state, action) => pipe([addNewGenericMsg(action)], state)
+    [actions.addGenericMsg]: (state, action) => pipe([addNewGenericMsg(action)], state),
+    [actions.quizQns]: (state, action) => pipe([quizQns(action)], state),
+    [actions.quizSubmit]: (state, action) => pipe([quizSubmit(action)], state)
   },
   defaultState
 )

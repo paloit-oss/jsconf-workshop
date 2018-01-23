@@ -8,3 +8,6 @@ export const saveUsername = createAction('USERNAME_SAVE')
 export const showInputError = createAction('INPUT_ERROR')
 export const addChatMsg = createAction('CHAT_MSG_ADD')
 export const addGenericMsg = createAction('GENERIC_MSG_ADD')
+export const quizSubmit = createAction('QUIZ_SUBMIT')
+export const quizQns = createAction('QUIZ_QNS')
+

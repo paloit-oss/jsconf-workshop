@@ -36,3 +36,7 @@ export const showInputError = ({ name, error }) => state =>
   state.setIn(['inputs', name, 'error'], error)
 
 export const clearInputError = ({ name }) => state => state.setIn(['inputs', name, 'error'], '')
+
+export const quizQns = ({ questions }) => state => state.setIn(['questions'], questions)
+
+export const quizSubmit = ({ quizScore, quizStatus, quizStatusMsg }) => state => state.setIn(['quizScore'], quizScore) && state.setIn(['quizStatus'], quizStatus) && state.setIn(['quizStatusMsg'], quizStatusMsg)
