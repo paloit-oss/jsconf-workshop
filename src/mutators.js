@@ -38,12 +38,55 @@ const countMention = (chatMessage) => {
   return Map(mentions)
 }
 
-export const countMentions = () => state => {
+export const initMentions = () => state => {
   const currentChat = state.get('chats', List())
   const updatedMentions = countMention(currentChat)
 
   return state.set('mentions', updatedMentions)
 }
+
+
+
+const updateMentionMessage = (state, newMessage) => {
+  const mentions = state.get('mentions', Map({
+    jsConf: 0,
+    paloIT: 0
+  }))
+  
+  let a = 2;
+  // Something slowing down your application
+  for (let index = 1; index < 10000; index++) {
+    for (let power = 1; power < index; power++) {
+      a = a * a
+    }
+  }
+
+  if (newMessage) {
+    let jsConf = 0
+    let paloIT = 0
+    const message = newMessage.toLowerCase()
+    const countJsConf = (message.match(/jsconf/g) || []).length;
+    const countPaloIT = (message.match(/palo it/g) || []).length;
+
+    if (countPaloIT > 0 || countJsConf > 0) {
+      return new Map({
+        jsConf: mentions.get('jsConf') + countJsConf,
+        paloIT: mentions.get('paloIT') + countPaloIT
+      })
+    }
+  }
+
+  return mentions
+}
+
+export const countMentions = ({ value }) => state => {
+  const currentChat = state.get('chats', List())
+  const updatedMentions = updateMentionMessage(state, value)
+
+  return state.set('mentions', updatedMentions)
+}
+
+
 
 export const init = () => state => {
   return state.set('chats', initChat())

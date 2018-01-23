@@ -7,6 +7,7 @@ import * as actions from 'actions'
 import { pipe } from 'utils'
 import {
   init,
+  initMentions,
   countMentions,
   addNewMsg,
   clearInput,
@@ -23,7 +24,7 @@ const defaultState = Map({})
 
 const stateReducer = createReducer(
   {
-    [actions.init]: (state, action) => pipe([init(action), countMentions(action)], state),
+    [actions.init]: (state, action) => pipe([init(action), initMentions(action)], state),
     [actions.editInput]: (state, action) => pipe([setInput(action)], state),
     [actions.sendChatMsg]: (state, action) => pipe([addNewMsg(action), countMentions(action), clearInput(action)], state),
     [actions.saveUsername]: (state, action) =>
