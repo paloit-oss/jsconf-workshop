@@ -10,4 +10,5 @@ export const addChatMsg = createAction('CHAT_MSG_ADD')
 export const addGenericMsg = createAction('GENERIC_MSG_ADD')
 export const quizSubmit = createAction('QUIZ_SUBMIT')
 export const quizQns = createAction('QUIZ_QNS')
-
+export const showSendMsgError = createAction('SENT_MSG_ERROR_SHOW')
+export const appendOlderMsgs = createAction('APPEND_OLDER_MSG')

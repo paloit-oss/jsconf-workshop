@@ -14,7 +14,9 @@ import {
   clearInputError,
   addNewGenericMsg,
   quizQns,
-  quizSubmit
+  quizSubmit,
+  showMsgError,
+  appendOlderMsgs
 } from 'mutators'
 
 const defaultState = Map({})
@@ -32,7 +34,9 @@ const stateReducer = createReducer(
     [actions.addChatMsg]: (state, action) => pipe([addNewMsg(action)], state),
     [actions.addGenericMsg]: (state, action) => pipe([addNewGenericMsg(action)], state),
     [actions.quizQns]: (state, action) => pipe([quizQns(action)], state),
-    [actions.quizSubmit]: (state, action) => pipe([quizSubmit(action)], state)
+    [actions.quizSubmit]: (state, action) => pipe([quizSubmit(action)], state),
+    [actions.showSendMsgError]: (state, action) => pipe([showMsgError(action)], state),
+    [actions.appendOlderMsgs]: (state, action) => pipe([appendOlderMsgs(action)], state)
   },
   defaultState
 )
