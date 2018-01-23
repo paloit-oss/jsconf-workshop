@@ -19,7 +19,7 @@ const Login = props => {
     <Container>
       <Flex
         justifyContent={'center'}
-        alignContent={'center'}
+        alignItems={'center'}
         flexDirection={'column'}
         height={'100%'}
       >

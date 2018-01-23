@@ -33,13 +33,18 @@ const Wrapper = styled.div`
   `};
 `
 
+const Resend = P.extend`
+  font-size: 10px;
+  text-decoration: underline;
+`
+
 const ChatBubble = props => {
   const { right, left, content, username, isSelf, showResendButton } = props
   return (
     <Wrapper right={right} left={left} error={showResendButton}>
       {!isSelf && <H5>{username}</H5>}
       <P>{content}</P>
-      {showResendButton && <P>Resend</P>}
+      <Flex justifyContent={'flex-end'}>{showResendButton && <Resend>Resend</Resend>}</Flex>
     </Wrapper>
   )
 }

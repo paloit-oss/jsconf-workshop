@@ -45,3 +45,19 @@ export const showInputError = ({ name, error }) => state =>
   state.setIn(['inputs', name, 'error'], error)
 
 export const clearInputError = ({ name }) => state => state.setIn(['inputs', name, 'error'], '')
+
+export const appendOlderMsgs = ({ messages }) => state => {
+  let currentChat = state.get('chats', List())
+  const currentUser = state.get('username')
+  let updatedChat = []
+  messages.map(value => {
+    let msgObj = Map({
+      message: value.message,
+      username: value.username,
+      isSelf: value.username.toLowerCase() === currentUser.toLowerCase(),
+      type: 'chat'
+    })
+    updatedChat.push(msgObj)
+  })
+  return state.set('chats', currentChat.merge(updatedChat))
+}

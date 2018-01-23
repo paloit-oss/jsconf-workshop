@@ -4,7 +4,8 @@ import {
   addChatMsg,
   addGenericMsg,
   addUserToChat,
-  sendChatMsg
+  sendChatMsg,
+  appendOlderMsgs
 } from 'actions'
 import { history } from 'App'
 
@@ -28,6 +29,7 @@ const setUpSocket = socket => {
     socket.on('userLeft', data =>
       dispatch(addGenericMsg({ value: `${data.username} has left the chat` }))
     )
+    socket.on('olderMessages', ({ messages }) => dispatch(appendOlderMsgs({ messages })))
   }
 
   const emitter = action => {

@@ -8,22 +8,9 @@ import { Form, Input } from 'components'
 const CHAT_INPUT = 'chat'
 
 const MessageInput = props => {
-  const { dispatch, currentInputMsg, username } = props
+  const { dispatch, currentInputMsg, username, onSubmit } = props
   return (
-    <Form
-      onSubmit={e =>
-        e.preventDefault() ||
-        dispatch(
-          sendChatMsg({
-            value: currentInputMsg,
-            isSelf: true,
-            name: CHAT_INPUT,
-            username
-          })
-        )
-      }
-      autoComplete="off"
-    >
+    <Form onSubmit={onSubmit} autoComplete="off">
       <Input
         type={'text'}
         name={CHAT_INPUT}
