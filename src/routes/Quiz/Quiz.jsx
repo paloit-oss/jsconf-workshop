@@ -11,10 +11,11 @@ import { history } from '../../App'
 import { quizQns, quizSubmit } from 'actions'
 import { Flex, Wrapper, Typography, Space, Form, Button } from 'components'
 import { Header, Question, Validate } from 'local'
+import RouteProtect from 'hoc/RouteProtect'
 
 const { H5 } = Typography
 
-const restApi = 'https://murmuring-taiga-86309.herokuapp.com'
+const restApi = 'https://paloit.herokuapp.com'
 
 class Quiz extends Component {
   componentDidMount() {
@@ -102,4 +103,4 @@ const s = state => ({ state })
 // d function
 const d = dispatch => ({ dispatch })
 
-export default withRouter(connect(s, d)(Quiz))
+export default connect(s, d)(RouteProtect(Quiz))

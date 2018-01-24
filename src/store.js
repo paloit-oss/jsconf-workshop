@@ -9,7 +9,7 @@ import socketMiddleware from 'middlewares/socket'
 import restMiddleware from 'middlewares/rest'
 import setUpSocket from 'socketConfig'
 
-const socket = io('https://murmuring-taiga-86309.herokuapp.com')
+const socket = io('https://paloit.herokuapp.com')
 //const socket = io('localhost:5000')
 
 const middlewares = applyMiddleware(socketMiddleware(setUpSocket(socket)), restMiddleware)
