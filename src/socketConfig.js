@@ -29,7 +29,8 @@ const setUpSocket = socket => {
     socket.on('userLeft', data =>
       dispatch(addGenericMsg({ value: `${data.username} has left the chat` }))
     )
-    socket.on('olderMessages', ({ messages }) => dispatch(appendOlderMsgs({ messages })))
+    // Dont send history
+    // socket.on('olderMessages', ({ messages }) => dispatch(appendOlderMsgs({ messages })))
   }
 
   const emitter = action => {
