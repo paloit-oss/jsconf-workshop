@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 // INTERNAL DEPENDENCIES
 import { Flex } from 'components'
-import { ChatBubble, GenericMsg, ProfilePicture } from 'local'
+import { ChatBubble, GenericMsg } from 'local'
 
 const Wrapper = styled.div`
   height: 100%;
@@ -17,15 +17,15 @@ const FlexWrapper = Flex.extend`
 `
 
 class Chats extends Component {
-  render() {
+  render () {
     const { chats } = this.props
     return (
       <Wrapper innerRef={this.props.containerRef}>
         <FlexWrapper justifyContent={'flex-end'} alignItems={'center'} flexDirection={'column'}>
           {chats.map(
             (chat, i) =>
-              chat.get('type') === 'chat' ? (
-                <ChatBubble
+              (chat.get('type') === 'chat'
+                ? <ChatBubble
                   key={i}
                   right={chat.get('isSelf')}
                   left={!chat.get('isSelf')}
@@ -33,10 +33,8 @@ class Chats extends Component {
                   username={chat.get('username')}
                   isSelf={chat.get('isSelf')}
                   showResendButton={chat.get('showResendButton')}
-                />
-              ) : (
-                <GenericMsg key={i} content={chat.get('message')} />
-              )
+                  />
+                : <GenericMsg key={i} content={chat.get('message')} />)
           )}
         </FlexWrapper>
       </Wrapper>

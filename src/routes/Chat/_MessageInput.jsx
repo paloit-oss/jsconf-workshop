@@ -20,9 +20,8 @@ const MessageInput = props => {
             name: CHAT_INPUT,
             username
           })
-        )
-      }
-      autoComplete="off"
+        )}
+      autoComplete='off'
     >
       <Input
         type={'text'}
