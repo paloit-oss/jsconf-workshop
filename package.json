@@ -24,7 +24,8 @@
     "redux": "^3.7.2",
     "redux-act": "^1.5.1",
     "socket.io-client": "^2.0.4",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "why-did-you-update": "^0.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

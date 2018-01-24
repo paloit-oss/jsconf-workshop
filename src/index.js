@@ -8,6 +8,9 @@ import App from 'App'
 if (process.env.NODE_ENV !== 'production') {
   // -------------------------------------------------
   // non-prod env
+  // const {whyDidYouUpdate} = require('why-did-you-update')
+  // whyDidYouUpdate(React)
+
   const { AppContainer } = require('react-hot-loader')
   const renderApp = Component =>
     render(
