@@ -17,17 +17,12 @@ class Chat extends React.Component {
     super(props);
     props.dispatch(init({}))
     this.chatContainerRef = null
+    this.setInnerRef = this.setInnerRef.bind(this);
   }
-  componentDidMount() {
-    console.log('chatContainerRef componentDidMount', this.chatContainerRef)
-    if (this.chatContainerRef) {
-      console.log('IN chatContainerRef')
-      this.chatContainerRef.scrollTop = this.chatContainerRef.scrollHeight
-    }
+  componentDidUpdate() {
+    this.chatContainerRef.scrollTop = this.chatContainerRef.scrollHeight    
   }
-
   setInnerRef(chatContainer) {
-    console.log('= setInnerRef', chatContainer)
     this.chatContainerRef = chatContainer
   }
 
@@ -37,7 +32,6 @@ class Chat extends React.Component {
     const chats = state.getIn(['chats'], List())
     const mentions = this.props.state.getIn(['mentions'], Map())
     const username = state.get('username')
-    // let chatContainerRef = null
     const onChatSubmit = e => {
       e.preventDefault()
       dispatch(
@@ -48,11 +42,6 @@ class Chat extends React.Component {
           username
         })
       )
-      console.log('chatContainerRef', this.chatContainerRef)
-      if (this.chatContainerRef) {
-        console.log('IN chatContainerRef')
-        this.chatContainerRef.scrollTop = this.chatContainerRef.scrollHeight
-      }
     }
     return (
       <Flex justifyContent={'center'} height={'100%'}>
@@ -66,7 +55,6 @@ class Chat extends React.Component {
             <Header />
             <ChatContainer
               containerRef={this.setInnerRef}
-              // chats={chats}
             />
             <Space height={'20px'} />
             <MessageInput

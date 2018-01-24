@@ -5,13 +5,13 @@ import { List, Map } from 'immutable'
 import { initChat } from 'mock'
 
 const countMention = (chatMessage) => {
-  let a = 2;
+  // let a = 2;
   // Something slowing down your application
-  for (let index = 1; index < 10000; index++) {
-    for (let power = 1; power < index; power++) {
-      a = a * a
-    }
-  }
+  // for (let index = 1; index < 10000; index++) {
+  //   for (let power = 1; power < index; power++) {
+  //     a = a * a
+  //   }
+  // }
 
   const mentions = chatMessage
   .reduce(

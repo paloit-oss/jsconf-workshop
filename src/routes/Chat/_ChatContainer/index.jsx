@@ -30,8 +30,8 @@ class Chats extends Component {
   render() {
     const { chats } = this.props
     return (
-      <Wrapper>
-      // <Wrapper innerRef={this.props.containerRef}>
+      // <Wrapper>
+      <Wrapper innerRef={this.props.containerRef}>
         <FlexWrapper justifyContent={'flex-end'} alignItems={'center'} flexDirection={'column'}>
           {chats.map(
             (chat, i) =>
