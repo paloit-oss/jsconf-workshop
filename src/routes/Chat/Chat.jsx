@@ -37,6 +37,7 @@ class Chat extends Component {
             height={'100%'}
           >
             <Header />
+            <Button onClick={(e)=>history.push('/quiz')}>Quiz</Button>
             <ChatContainer
               containerRef={chatContainer => (this.chatContainerRef = chatContainer)}
               chats={chats}
