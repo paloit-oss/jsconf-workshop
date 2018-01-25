@@ -21,18 +21,18 @@ const defaultState = Map({})
 
 const stateReducer = createReducer(
   {
-    [actions.editInput]: (state, action) => pipe([setInput(action)], state),
-    [actions.sendChatMsg]: (state, action) => pipe([addNewMsg(action), clearInput(action)], state)
-    // [actions.saveUsername]: (state, action) =>
+    [actions.editInput]: (state, payload) => pipe([setInput(payload)], state),
+    [actions.sendChatMsg]: (state, payload) => pipe([addNewMsg(payload), clearInput(payload)], state)
+    // [actions.saveUsername]: (state, payload) =>
     //   pipe(
     //     [saveUsername(), clearInput({ name: 'username' }), clearInputError({ name: 'username' })],
     //     state
     //   ),
-    // [actions.showInputError]: (state, action) => pipe([showInputError(action)], state),
-    // [actions.addChatMsg]: (state, action) => pipe([addNewMsg(action)], state),
-    // [actions.addGenericMsg]: (state, action) => pipe([addNewGenericMsg(action)], state),
-    // [actions.showSendMsgError]: (state, action) => pipe([showMsgError(action)], state),
-    // [actions.appendOlderMsgs]: (state, action) => pipe([appendOlderMsgs(action)], state)
+    // [actions.showInputError]: (state, payload) => pipe([showInputError(payload)], state),
+    // [actions.addChatMsg]: (state, payload) => pipe([addNewMsg(payload)], state),
+    // [actions.addGenericMsg]: (state, payload) => pipe([addNewGenericMsg(payload)], state),
+    // [actions.showSendMsgError]: (state, payload) => pipe([showMsgError(payload)], state),
+    // [actions.appendOlderMsgs]: (state, payload) => pipe([appendOlderMsgs(payload)], state)
   },
   defaultState
 )
