@@ -12,7 +12,7 @@ export const history = createHistory()
 
 const App = () => (
   <Provider store={store}>
-    <Router history={history}>
+    <Router history={history} key={Math.random()}>
       <Fragment>
         <Route exact path={'/'} component={Login} />
         <Route exact path={'/chat'} component={Chat} />
