@@ -7,7 +7,7 @@ import { List } from 'immutable'
 
 import { Flex, Container, Space } from 'components'
 import { Header, ChatContainer, MessageInput } from 'local'
-import RouteProtect from 'hoc/RouteProtect'
+// import RouteProtect from 'hoc/RouteProtect'
 
 const CHAT_INPUT = 'chat'
 
