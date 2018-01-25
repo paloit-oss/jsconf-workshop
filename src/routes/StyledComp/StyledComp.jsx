@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CustomButton = styled.button`
-  ${props => props.green && 'background: green'};
-  ${props => props.yellow && 'background: yellow'};
+  ${props => props.small && 'padding: 5px;'};
+  ${props => props.medium && 'padding: 15px;'};
+  ${props => props.large && 'padding: 25px;'};
   margin: 20px;
-  padding: 10px;
 `
 
 const StyledComp = () => {
   return (
     <div>
-      <CustomButton green>Styled Component 1</CustomButton>
-      <CustomButton yellow>Styled Component 2</CustomButton>
+      <CustomButton small>Styled Component 1</CustomButton>
+      <CustomButton medium>Styled Component 1</CustomButton>
+      <CustomButton large>Styled Component 2</CustomButton>
     </div>
   );
 }
