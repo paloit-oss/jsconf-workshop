@@ -88,7 +88,7 @@ class Quiz extends Component {
               (quizStatus == 'success') ? (
                 <Button onClick={(e)=>history.push('/chat')}>Back to Chat Page</Button>
               ) : (
-                <Validate error={quizStatusMsg} />
+                (questions.length) ? (<Validate error={quizStatusMsg} />) : null
                 )
             }
           </Form>
