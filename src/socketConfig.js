@@ -1,12 +1,4 @@
-import {
-  saveUsername,
-  showInputError,
-  addChatMsg,
-  addGenericMsg,
-  addUserToChat,
-  sendChatMsg,
-  appendOlderMsgs
-} from 'actions'
+import { saveUsername, showInputError, addChatMsg, addGenericMsg, addUserToChat, appendOlderMsgs } from 'actions'
 import { history } from 'App'
 
 const setUpSocket = socket => {

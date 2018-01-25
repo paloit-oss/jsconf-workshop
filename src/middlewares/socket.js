@@ -2,7 +2,10 @@
 
 // const socketMiddleware = ({ listener, emitter }) => store => {
 //   listener(store)
-//   return next => action => next(action) && emitter(action)
+//   return next => action => {
+//     emitter(action)
+//     return next(action)
+//   }
 // }
 
 export default socketMiddleware
