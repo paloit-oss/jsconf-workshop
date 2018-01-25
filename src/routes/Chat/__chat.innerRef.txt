@@ -1,0 +1,14 @@
+
+
+  constructor(props) {
+    this.setInnerRef = this.setInnerRef.bind(this)
+  }
+
+  setInnerRef(chatContainer) {
+    this.chatContainerRef = chatContainer
+  }
+
+  <ChatContainer
+    containerRef={this.setInnerRef}
+    chats={chats}
+  />
