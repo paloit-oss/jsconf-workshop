@@ -1,0 +1,84 @@
+1. Simple Styled Component (StyledComp.jsx)
+
+import styled from 'styled-components';
+const CustomButton = styled.button`
+ background: lightblue;
+`
+const StyledComp = () => {
+ return <CustomButton>Styled Component</CustomButton>;
+}
+
+
+2. Passing Custom Props (StyledComp.jsx)
+import React, { Fragment } from 'react';
+
+const CustomButton = styled.button`
+  ${props => props.small && 'padding: 5px;'};
+  ${props => props.medium && 'padding: 15px;'};
+  ${props => props.large && 'padding: 25px;'};
+  margin: 20px;
+`
+const StyledComp = () => {
+  return (
+    <Fragment>
+      <CustomButton small>Styled Component 1</CustomButton>
+      <CustomButton medium>Styled Component 1</CustomButton>
+      <CustomButton large>Styled Component 2</CustomButton>
+    </Fragment>
+  );
+ }
+
+3. Themes (StyledComp.jsx)
+import styled, { ThemeProvider } from 'styled-components';
+
+const CustomButton = styled.button`
+ background: ${props => props.theme.primary};
+ margin: 20px;
+ padding: 10px;
+`
+const theme1 = {
+ primary: 'green'
+}
+const theme2 = {
+ primary: 'yellow'
+}
+
+const StyledComp = () => {
+ return (
+   <Fragment>
+     <ThemeProvider theme={theme1}>
+       <CustomButton>Component 1</CustomButton>
+     </ThemeProvider>
+     <ThemeProvider theme={theme2}>
+       <CustomButton>Component 2</CustomButton>
+     </ThemeProvider>
+   </Fragment>
+ );
+}
+
+4. Reusability and Extendability (StyledComp.jsx)
+
+const buttonBase = props => `
+ margin: 20px;
+ padding: 10px;
+`
+const Button = styled.button`
+ ${buttonBase};
+ background: ${props => props.theme.primary};
+`
+const SuperButton = styled.button`
+ ${buttonBase};
+ background: ${props => props.theme.primary};
+ border-radius: 8px;
+`
+
+const StyledComp = () => {
+  return (
+    <Fragment>
+      <Button>Component 1</Button>
+      <SuperButton>Component 2</SuperButton>
+    </Fragment>
+  );
+ }
+
+
