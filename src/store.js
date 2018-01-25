@@ -18,3 +18,5 @@ export default store
 
 // const middlewares = applyMiddleware(socketMiddleware(setUpSocket(socket)), restMiddleware)
 // const store = createStore(stateReducer, composeWithDevTools(middlewares))
+
+// export default store
