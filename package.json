@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "form-serialize": "^0.7.2",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "react": "^16.2.0",

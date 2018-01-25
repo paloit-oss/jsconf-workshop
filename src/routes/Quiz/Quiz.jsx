@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { List } from 'immutable'
 import axios from 'axios'
+import serialize from 'form-serialize'
 import { history } from '../../App'
 
 // INTERNAL DEPENDENCIES
@@ -35,13 +36,8 @@ class Quiz extends Component {
   }
   handleSubmit(username, event) {
     event.preventDefault();
-    var answers= {};
-    for (const [key, value] of new FormData(event.target).entries())
-    {
-        answers[key] = value;
-    }
     axios.post(`${restApi}/quiz/submit`, {
-        answers,
+        answers: serialize(event.target, { hash: true }),
         username
       })
     .then(res => {
