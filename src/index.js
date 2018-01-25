@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
   const { AppContainer } = require('react-hot-loader')
   const renderApp = Component =>
     render(
-      <AppContainer>
+      <AppContainer warnings={false}>
         <Component />
       </AppContainer>,
       document.getElementById('app')

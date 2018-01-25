@@ -19,8 +19,8 @@
   },
   "compact": false,
   "plugins": [
+    "react-hot-loader/babel",
     "babel-plugin-styled-components",
-    "transform-regenerator",
     [
       "transform-imports",
       {

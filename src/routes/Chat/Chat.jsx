@@ -1,5 +1,5 @@
 // EXTERNAL DEPENDENCIES
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { List, Map } from 'immutable'
 
@@ -32,17 +32,6 @@ class Chat extends React.Component {
     const chats = state.getIn(['chats'], List())
     const mentions = this.props.state.getIn(['mentions'], Map())
     const username = state.get('username')
-    const onChatSubmit = e => {
-      e.preventDefault()
-      dispatch(
-        sendChatMsg({
-          value: currentInputMsg,
-          isSelf: true,
-          name: CHAT_INPUT,
-          username
-        })
-      )
-    }
     return (
       <Flex justifyContent={'center'} height={'100%'}>
         <Container maxWidth={'600px'}>
@@ -61,7 +50,6 @@ class Chat extends React.Component {
               currentInputMsg={currentInputMsg}
               username={username}
               dispatch={dispatch}
-              onSubmit={onChatSubmit}
             />
             <Space height={'20px'} />
             <Mentions mentions={mentions} dispatch={dispatch} />
