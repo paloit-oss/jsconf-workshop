@@ -56,7 +56,6 @@ class Chats extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('mapStateToProps', state, ownProps)
   return {
     chats: state.getIn(['chats'])
   };
